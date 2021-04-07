@@ -1,0 +1,12 @@
+controller\ProfesoresController.class
+com\mycompany\sysprofesores\resources\JavaEE8Resource.class
+model\Usuario.class
+gestion1\EstudianteGestion.class
+model\profesores.class
+com\mycompany\sysprofesores\JAXRSConfiguration.class
+controller\UsuarioController.class
+model\estudiante.class
+controller\EstudianteController.class
+gestion1\UsuarioGestion.class
+model\Conexion.class
+gestion1\ProfesoresGestion.class

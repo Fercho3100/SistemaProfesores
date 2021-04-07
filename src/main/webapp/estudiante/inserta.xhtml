@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Edita estudiante</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./../resources/templates/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form id="editaEstudianteForm">
+                    <b:container fluid="true">
+                        <b:panel title="Edita Estudiante" look="primary" >
+                            <b:row tooltip="ID Del Sistema">
+                                <b:column medium-screen="2">
+                                    <h:outputLabel value="Nombre" 
+                                                   for="Nombre"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Nombre"
+                                                 id="id"
+                                                 
+                                                 value="#{estudianteController.nombre}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="id"/>
+                                </b:column>
+                            </b:row>
+                            <b:row tooltip="">
+                                <b:column medium-screen="2">
+                                    <h:outputLabel value="Email" 
+                                                   for="identificacion"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="email"
+                                                 id="email"
+                                                 readonly="false"
+                                                 value="#{estudianteController.email}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="email"/>
+                                </b:column>
+                            </b:row>
+                            <b:row tooltip="">
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Fecha Nacimiento" 
+                                                  />
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Fecha Nacimiento"
+                                                 id="Identificacion"
+                                                 required="true"
+                                                 type="date"
+                                                 value="#{estudianteController.fecha_nacimiento}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="Fecha Nacimiento"/>
+                                </b:column>
+                            </b:row>
+                            <b:row tooltip="">
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Constraseña" 
+                                                  />
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Constraseña"
+                                                 id="Constraseña"
+                                                 required="true"
+                                                 value="#{estudianteController.contrasena}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="Constraseña"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row tooltip="">
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Descuento estudiante" 
+                                                  />
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Descuento estudiante"
+                                                 id="Descuento_estudiante"
+                                                 required="true"
+                                                 value="#{estudianteController.desc_estudiante}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="Descuento estudiante"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row tooltip="">
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Nombre_Carrera" 
+                                                  />
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Nombre Carrera"
+                                                 id="Nombre_Carrera"
+                                                 required="true"
+                                                 value="#{estudianteController.nombre_carrera}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="Nombre Carrera"/>
+                                </b:column>
+                            </b:row>
+                            
+                            <b:row tooltip="Modifique el primer apelldio de ser requerido">
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Indentificacion" 
+                                                  />
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Indentificacion"
+                                                 id="Indentificacion"
+                                                 required="true"
+                                                 value="#{estudianteController.identicacion}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="Indentificacion"/>
+                                </b:column>
+                            </b:row>
+                            
+                            
+                            
+                            
+                            <b:row>
+                                <b:column medium-screen="2"/>
+                                <b:column medium-screen="4">
+                                    
+                                    
+                                    <b:commandButton value="Guardar"
+                                                     look="danger"
+                                                     style="width: 33%"
+                                                     action="#{estudianteController.Insertarestudiante()}"
+                                                     ></b:commandButton>
+                                </b:column>
+                            </b:row>
+                        </b:panel>
+                    </b:container>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>
