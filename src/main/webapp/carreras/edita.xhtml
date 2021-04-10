@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Edita Carrera</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./../resources/templates/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form id="editaEstudianteForm">
+                    <b:container fluid="true">
+                        <b:panel title="Actualiza Carrera" look="primary" >
+                            <b:row tooltip="ID Del Sistema">
+                                <b:column medium-screen="2">
+                                    <h:outputLabel value="Nombre" 
+                                                   for="Nombre"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="ID"
+                                                 id="id"
+                                                 
+                                                 value="#{carrerasController.nombre_carrera}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="id"/>
+                                </b:column>
+                            </b:row>
+                            <b:row tooltip="">
+                                <b:column medium-screen="2">
+                                    <h:outputLabel value="Codigo" 
+                                                   for="Codigo"/>
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Codigo"
+                                                 id="Codigo"
+                                                 readonly="false"
+                                                 value="#{carrerasController.codigo}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="email"/>
+                                </b:column>
+                            </b:row>
+                            <b:row tooltip="">
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Creditos" 
+                                                  />
+                                </b:column>
+                                <b:column medium-screen="4">
+                                    <b:inputText placeholder="Creditos"
+                                                 id="Creditos"
+                                                 required="true"
+                                                 value="#{carrerasController.creditos}"/>
+                                </b:column>
+                                <b:column medium-screen="6" style-class="message">
+                                    <b:message for="Identificacion"/>
+                                </b:column>
+                            </b:row>
+
+                            <b:row>
+                                <b:column medium-screen="2"/>
+                                <b:column medium-screen="4">
+                                    
+                                    <b:commandButton value="Guardar"
+                                                     look="success"
+                                                     style="width: 33%"
+                                                     action="#{carrerasController.updateCarrera()}"
+                                                     ></b:commandButton>
+                                    
+                                </b:column>
+                            </b:row>
+                        </b:panel>
+                    </b:container>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>

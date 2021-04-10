@@ -117,7 +117,7 @@ public class CursoController extends curso implements Serializable {
         }
     }
     
-     public String inserta() {
+    public String inserta() {
       
        return "inserta.xhtml";
     }

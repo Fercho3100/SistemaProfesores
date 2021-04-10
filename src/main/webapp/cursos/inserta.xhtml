@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edita estudiante</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./../resources/templates/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form id="editaEstudianteForm">
+                    <b:container fluid="true">
+                        <b:panel title="Inserta Curso" look="primary" >
+                            <b:formGroup>
+                                <b:selectOneMenu value="#{cursoController.id_carrera}" select2="true"  required="true" label="Carreras" >
+                                    <f:selectItem itemLabel="(Please select)" itemValue="" />
+                                    <f:selectItems value="#{cursoController.selectcarreras}" var="c" itemValue="#{c.id_carrera}" itemLabel="#{c.nombre_carrera}" />
+                                </b:selectOneMenu>
+
+                                <h:outputLabel value="Nombre Curso" 
+                                               for="Nombre"/>
+                                <b:inputText placeholder="Nombre Curso"
+                                             id="id"
+                                             value="#{cursoController.nombre_curso}"/>
+
+                                <h:outputLabel value="Duracion del curso" 
+                                               for="Nombre"/>
+                                <b:inputText placeholder="Duracion Curso(En semanas)"
+                                             id="duracion"
+                                             value="#{cursoController.duracion_curso}"/>
+
+                                <h:outputLabel value="Descripcion Breve del Curso" 
+                                               for="Nombre"/>
+                                <b:inputText placeholder="Nombre Curso"
+                                             id="decripcion"
+                                             value="#{cursoController.descripcion_curso}"/>
+
+                            </b:formGroup>
+                            <b:commandButton value="Guardar"
+                                             look="success"
+                                             style="width: 33%"
+                                             action="#{cursoController.Insertarcurso()}"
+                                             ></b:commandButton>
+                        </b:panel>
+                    </b:container>
+
+                </h:form>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>
