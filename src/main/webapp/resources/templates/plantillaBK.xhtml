@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="default.css" library="css"/>
+        <h:outputStylesheet name="cssLayout.css" library="css"/>
+        <title>BK</title>
+    </h:head>
+
+    <h:body>
+        <div id="top" class="top">
+            <ui:insert name="top">
+                <b:navBar class="nav" inverse="false" fluid="true" brand="Sistema Profesores" brand-href="#{request.contextPath}/faces/principal.xhtml">
+                    
+                    <b:navbarLinks>
+                        <!--
+                        <b:dropMenu value="Profesores" icon-awesome="fa-group">
+                            <b:navLink value="Agregar" icon-awesome="fa-newspaper-o"
+                                       href="#{request.contextPath}/faces/profesores/list.xhtml"/>   
+                            
+                        </b:dropMenu>
+                        <b:dropMenu value="Estudiante" icon-awesome="fa-group">
+                            <b:navLink value="Agregar" icon-awesome="fa-newspaper-o"
+                                       href="#{request.contextPath}/faces/estudiante/list.xhtml"/>   
+                            
+                        </b:dropMenu>
+                        <b:dropMenu value="Curso" icon-awesome="fa-group">
+                            <b:navLink value="Agregar" icon-awesome="fa-newspaper-o"
+                                       href="#{request.contextPath}/faces/cursos/list.xhtml"/>   
+                            
+                        </b:dropMenu>
+                        <b:dropMenu value="Carreras" icon-awesome="fa-group">
+                            <b:navLink value="Agregar" icon-awesome="fa-newspaper-o"
+                                       href="#{request.contextPath}/faces/carreras/list.xhtml"/>   
+                            
+                        </b:dropMenu>
+                        
+                        -->
+                    </b:navbarLinks>                    
+                    <b:navbarLinks pull="right">
+                        <b:dropMenu value="#{usuarioController.idUsuario}" icon-awesome="fa-group">
+                            <b:navLink value="Editar Usuario" icon-awesome="gamepad"
+                                       href="#"/>                            
+                        </b:dropMenu>
+                    
+                        <b:dropMenu value="Configuracion" icon-awesome="fa-cog">
+                            <h:form style="display: inline" styleClass="form-inline">
+                                <b:selectOneMenu value="#{temaController.tema}"
+                                                 style="width: 180px;margin-top: 8px;" 
+                                                 onchange="$('.theme-selector-button').click()">
+                                    <f:selectItem itemValue="default" itemLabel="default"/>
+                                    <f:selectItem itemValue="patternfly" itemLabel="patternfly"/>
+                                    <f:selectItem itemValue="cerulean" itemLabel="cerulean"/>
+                                    <f:selectItem itemValue="cosmo" itemLabel="cosmo"/>
+                                    <f:selectItem itemValue="cyborg" itemLabel="cyborg"/>
+                                    <f:selectItem itemValue="flatly" itemLabel="flatly"/>
+                                    <f:selectItem itemValue="journal" itemLabel="journal"/>
+                                    <f:selectItem itemValue="lumen" itemLabel="lumen"/>
+                                    <f:selectItem itemValue="paper" itemLabel="paper"/>
+                                    <f:selectItem itemValue="sandstone" itemLabel="sandstone"/>
+                                    <f:selectItem itemValue="simplex" itemLabel="simplex"/>
+                                    <f:selectItem itemValue="slate" itemLabel="slate"/>
+                                    <f:selectItem itemValue="spacelab" itemLabel="spacelab"/>
+                                    <f:selectItem itemValue="superhero" itemLabel="superhero"/>
+                                    <f:selectItem itemValue="united" itemLabel="united"/>
+                                    <f:selectItem itemValue="yeti" itemLabel="yeti"/>
+                                </b:selectOneMenu>
+                                <b:commandButton class="theme-selector-button" value="select" style="display: none"/>
+                            </h:form>                           
+                        </b:dropMenu>
+                    </b:navbarLinks>
+                </b:navBar>
+            </ui:insert>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content"></ui:insert>
+        </div>
+
+    </h:body>
+
+</html>
