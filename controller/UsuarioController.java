@@ -32,13 +32,20 @@ public class UsuarioController extends Usuario implements Serializable {
         if (usuario != null) {
             this.setNombreUsuario(usuario.getNombreUsuario());
             this.setIdRol(usuario.getIdRol());
-//            switch(usuario.idrol()){
-//                case 1 : accesototal=true;
-//rendered en la plantill
-//                
-//            }
-//            
-            return "principal.xhtml";
+            
+           //Validacion 
+           if("1".equals(getIdRol())){
+             return "principal.xhtml";
+           }
+           else if ("2".equals(getIdRol())){
+            return "principalEstudiante.xhtml";
+           }
+           
+           else if ("3".equals(getIdRol())){
+            return "principalBK.xhtml";
+           }
+           return "index.xhtml";
+            
         } else {
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
                     "Usuario o Contraseña incorrecta");
